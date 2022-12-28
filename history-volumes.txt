@@ -1,0 +1,818 @@
+    1  sudo su -
+    2  mkdir -p $HOME/.kube
+    3  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    4  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    5  kubectl get pods -o wide -n kube-system
+    6  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+    7  kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+    8  kubectl get nodes
+    9  kubectl get pods --all-namespaces
+   10  kubeadm token create --print-join-command
+   11  kubectl get nodes
+   12  kubectl get pods --all-namespaces
+   13  kubectl get nodes
+   14  kubectl get pods --all-namespaces
+   15  kubectl get pods
+   16  kubectl get ns
+   17  kubectl get pods -n kube-system
+   18  kubectl get pods --all-namespaces
+   19  vi mavenwebapp.yaml
+   20  kubectl apply -f mavenwebapp.yaml --dry-run=client
+   21  kubectl apply -f mavenwebapp.yaml
+   22  kubectl create namespace test-ns
+   23  kubectl apply -f mavenwebapp.yaml
+   24  cat mavenwebapp.yaml 
+   25  vi mavenwebapp.yaml 
+   26  kubectl apply -f mavenwebapp.yaml
+   27  kubectl get pods -n test-ns
+   28  vi mavenwebapp.yaml 
+   29  kubectl apply -f mavenwebapp.yaml
+   30  kubectl get pods -n test-ns
+   31  history > history.txt
+   32  vi history.txt 
+   33  kubectl get pods -o wide 
+   34  kubectl get pods --all-namespaces-o wide 
+   35  kubectl get pods --all-namespaces -o wide 
+   36  kubectl describe mavenwebapppod -n test-ns
+   37  kubectl describe pod mavenwebapppod -n test-ns
+   38  kubectl delete pod mavenwebapppod -n test-ns
+   39  kubectl get pods --all-namespaces -o wide 
+   40  kubectl get pods --all-namespaces -o wide -a
+   41  kubectl apply -f mavenwebapp.yaml 
+   42  kubectl get pods --all-namespaces
+   43  kubectl describe pod mavenwebapppod -n test-ns
+   44  clear
+   45  kubectl nodes
+   46  kubectl get nodes
+   47  kubectl describe node ip-172-31-18-109
+   48  kubectl all
+   49  kubectl -all
+   50  kubectl --all
+   51  kubectl get -all
+   52  kubectl get -all -n test-ns
+   53  kubectl get all -n test-ns
+   54  kubectl get all -n test-ns -o wide
+   55  kubectl get pods
+   56  kubeadm token create --print-join-command
+   57  kubectl get pods
+   58  kubectl getnodes
+   59  kubectl get nodes
+   60  sudo su
+   61  kubectl get pods
+   62  kubectl get pods -n test-ns
+   63  kubectl get nodes
+   64  ls
+   65  vi mavenwebapp.yaml 
+   66  kubectl apply -f mavenwebapp.yaml 
+   67  vi mavenwebapp.yaml 
+   68  kubectl apply -f mavenwebapp.yaml 
+   69  vi mavenwebapp.yaml 
+   70  kubectl apply -f mavenwebapp.yaml 
+   71  kubectl describe service mavenwebapp -n test-ns
+   72  vi mavenwebapp.yaml 
+   73  curl -v 10.100.186.24/maven-web-application/
+   74  kubectl get pod -n test-ns -o wide
+   75  kubectl get pod -o wide
+   76  kubectl get pods -o wide
+   77  kubectl get nodes -o wide
+   78  kubectl get pods -n test-ns
+   79  kubectl get pods -n test-ns -o wide
+   80  kubectl get pods
+   81  kubectl get pods -n test-ns
+   82  kubectl get pods -n test-ns -o wide
+   83  curl -v 10.44.0.1:8080/maven-web-application/
+   84  vi nodejs.yaml
+   85  mv nodejs.yaml nodejsApp.yaml
+   86  kubectl apply -f nodejsApp.yaml 
+   87  kubectl get all -n test-ns
+   88  kubectl exec -it nodejspod -n test-ns 
+   89  kubectl exec -it nodejspod -n test-ns  -- sh
+   90  kubectl get nodes
+   91  kubectl get pods -n test-ns -o wide
+   92  ls
+   93  cat nodejsApp.yaml 
+   94  vi mavenwebapp.yaml 
+   95  kubectl apply -f mavenwebapp.yaml 
+   96  kubectl get all -n test-ns
+   97  vi nodejsApp.yaml 
+   98  kubectl apply -f nodejsApp.yaml 
+   99  kubectl get all -n test-ns
+  100  kubectl exec -it mavenwebapppod -n test-ns -- bash
+  101  kubectl get all -n test-ns
+  102  vi nodejsApp.yaml 
+  103  kubectl exec -it mavenwebapppod -n test-ns -- bash
+  104  kubectl apply -f nodejsApp.yaml 
+  105  kubectl exec -it mavenwebapppod -n test-ns -- bash
+  106  sudo apt install net-tools
+  107  sudo netstat -tunlp
+  108  kubectl get pods --all-namespaces
+  109  vi multicontainerpod.yaml
+  110  kubectl apply -f multicontainerpod.yaml
+  111  vi multicontainerpod.yaml
+  112  kubectl apply -f multicontainerpod.yaml
+  113  cat multicontainerpod.yaml 
+  114  kubectl apply -f multicontainerpod.yaml
+  115  kubectl exec -it testpod -- bash
+  116  kubectl get all -n test-ns
+  117  kubectl delete pod mavenwebapprc-5kkqq mavenwebapprc-k6cvk 
+  118  kubectl delete pod mavenwebapprc-5kkqq mavenwebapprc-k6cvk  -n test-ns
+  119  kubectl get all -n test-ns
+  120  kubectl get nodes
+  121  kubectl get all 
+  122  ls
+  123  vi multicontainerpod.yaml 
+  124  kubectl apply -f multicontainerpod.yaml 
+  125  kubectl get all
+  126  cat multicontainerpod.yaml 
+  127  kubectl get all
+  128  kubectl exec -it nodejsapp -n test-ns
+  129  kubectl exec -it nodejsapp -n test-ns --bash
+  130  kubectl exec -it nodejsapp -n test-ns -- bash
+  131  kubectl get pods -n test-ns
+  132  kubectl exec -it nodejspod -n test-ns -- bash
+  133  kubectl get all -A
+  134  kubectl get pods -n test-ns
+  135  kubectl get nodes
+  136  kubectl get pods
+  137  kubectl get pods -n test-ns
+  138  kubectl get all -n test-ns
+  139  kubectl get all -n kube-system
+  140  vi name.yaml
+  141  mv name.yaml nginxpod.yaml
+  142  ls
+  143  sudo cp nginxpod.yaml /etc/kubernetes/manifests/
+  144  kubectl get pods
+  145  sudo cp nginxpod.yaml /etc/kubernetes/manifests/nginxpod.yaml
+  146  kubectl get pods
+  147  kubectl get pods -a
+  148  kubectl get pods -all
+  149  kubectl get pods
+  150  kubectl get pods -o wide
+  151  kubectl delete pod javawebapp
+  152  kubectl get pods
+  153  ls
+  154  cd /etc/kubernetes/manifests/
+  155  ls
+  156  vi nginxpod.yaml 
+  157  kubectl get pods
+  158  ls
+  159  cd
+  160  ls
+  161  kubectl get pods
+  162  sudo rm /etc/kubernetes/manifests/nginxpod.yaml 
+  163  kubectl api-resources | grep "ReplicationController"
+  164  kubectl get rc --all-namespaces
+  165  kubectl get pods --all-namespaces
+  166  kubectl get pods
+  167  kubectl get pods --all-namespaces
+  168  ls
+  169  sudo mkdir pod-deployment-files
+  170  ls
+  171  cd pod-deployment-files/
+  172  sudo mkdir pod-files
+  173  sudo mkdir deployment-files
+  174  cd
+  175  ls
+  176  mv . pod-deployment-files/pod-files/
+  177  sudo mv . pod-deployment-files/pod-files/
+  178  sudo cp . pod-deployment-files/pod-files/
+  179  sudo mv mavenwebapp.yaml multicontainerpod.yaml nginxpod.yaml nodejsApp.yaml pod-deployment-files/pod-files/
+  180  ls
+  181  cd pod-deployment-files/pod-files/
+  182  ls
+  183  cd
+  184  history > history1.txt
+  185  mv history1.txt pod-deployment-files/
+  186  sudo mv history1.txt pod-deployment-files/
+  187  ls
+  188  kubectl get pods
+  189  kubectl delete pod testname
+  190  kubectl delete pod testpod
+  191  vi replicationController.yaml
+  192  vi replicationController.yaml 
+  193  kubectl get all -n test-ns
+  194  kubectl get ep -n test-ns
+  195  kubectl delete nodejssvc
+  196  kubectl delete nodejssvc -n test-ns
+  197  kubectl delete service nodejssvc 
+  198  kubectl delete service nodejssvc -n test-ns
+  199  vi replicationController.yaml 
+  200  kubectl apply -f replicationController.yaml 
+  201  vi replicationController.yaml 
+  202  kubectl apply -f replicationController.yaml 
+  203  kubectl get all -n test-ns
+  204  kubectl get pods -n test-ns
+  205  vi replicationController.yaml 
+  206  kubectl get pods -n test-ns
+  207  kubectl delete pod -n test-ns mavenwebapprc-d9tqd
+  208  kubectl get pods
+  209  kubectl get pods -n test-ns
+  210  vi replicationController.yaml 
+  211  kubectl apply -f replicationController.yaml 
+  212  kubectl get pods
+  213  kubectl get pods -n test-ns
+  214  vi replicationController.yaml 
+  215  kubectl apply -f replicationController.yaml 
+  216  kubectl get pods -n test-ns
+  217  kubectl apply -f mavenwebapprc.yaml
+  218  kubectl get rc
+  219  kubectl get rc -n test-ns
+  220  vi mavenwebapprc.yaml 
+  221  kubectl get all -n test-ns
+  222  kubectl delete pod pod/mavenwebapppod pod/nodejspod
+  223  kubectl delete pod pod/mavenwebapppod pod/nodejspod -n test-ns
+  224  kubectl delete pod mavenwebapppod nodejspod -n test-ns
+  225  kubectl get all -n test-ns
+  226  kubectl get ep -n test-ns
+  227  kubectl scale rc mavenwebapprc --replicas 3 -n test-ns
+  228  kubectl get all -n test-ns
+  229  kubectl get ep -n test-ns
+  230  vi mavenwebapprc.yaml 
+  231  kubectl get pods -n test-ns -o wode
+  232  kubectl get pods -n test-ns -o wide
+  233  kubectl describe pods mavenwebapprc-9srkm -n test-ns
+  234  kubectl get services 
+  235  kubectl get services  -n test-ns
+  236  cat mavenwebapprc.yaml 
+  237  vi mavenwebapprc.yaml 
+  238  kubectl get apply -f mavenwebapprc.yaml 
+  239  kubectl apply -f mavenwebapprc.yaml 
+  240  kubectl get pods -n test-ns
+  241  kubectl apply -f mavenwebapprc.yaml 
+  242  vi mavenwebapprc.yaml 
+  243  cp mavenwebapprc.yaml pod-deployment-files/
+  244  sudo cp mavenwebapprc.yaml pod-deployment-files/
+  245  vi mavenwebapprc.yaml 
+  246  ls
+  247  kubectl get all -n tet-ns
+  248  kubectl get all -n test-ns
+  249  kubectl delete mavenwebapprc -n test-ns
+  250  kubectl delete rc mavenwebapprc -n test-ns
+  251  kubectl get all -n test-ns
+  252  kubectl apply -f mavenwebapprc.yaml 
+  253  kubectl get all -n test-ns
+  254  vi mavenwebapprc.yaml 
+  255  kubectl apply -f mavenwebapprc.yaml 
+  256  vi mavenwebapprc.yaml 
+  257  kubectl apply -f mavenwebapprc.yaml 
+  258  kubectl get pods
+  259  kubectl get pods -n test-ns
+  260  kubectl apply -f mavenwebapprc.yaml 
+  261  vi mavenwebapprc.yaml 
+  262  kubectl get all -n test-ns
+  263  kubectl delete rc mavenwebapprc -n test-ns
+  264  kubectl get all -n test-ns
+  265  kubectl apply -f mavenwebapprc.yaml 
+  266  kubectl get all -n test-ns
+  267  vi mavenwebapprc.yaml 
+  268  kubectl apply -f mavenwebapprc.yaml 
+  269  kubectl get all -n test-ns
+  270  kubectl delete rc mavenwebapprc
+  271  kubectl delete rc mavenwebapprc -n test-ns
+  272  kubectl get pods -n test-ns
+  273  kubectl apply -f mavenwebapprc.yaml 
+  274  kubectl get pods -n test-ns
+  275  kubectl get all -n test-ns
+  276  kubectl get pods --all-namespaces
+  277  kubectl get services --all-namespaces
+  278  kubectl get pods
+  279  kubectl get pods --all-namespaces
+  280  kubectl get nodes
+  281  kubectl get all
+  282  kubectl get all -n test-ns
+  283  kubectl get pods -o wide
+  284  kubectl get pods -o wide -n test-ns
+  285  kubectl get nodes
+  286  vi mavenwebapprc.yaml 
+  287  kubectl apply -f mavenwebapprc.yaml 
+  288  kubectl get all -n test-ns
+  289  cd pod-deployment-files/
+  290  cd pod-files/
+  291  ls
+  292  cat nodejsApp.yaml 
+  293  cd
+  294  pwd
+  295  sudo cp pod-deployment-files/pod-files/nodejsApp.yaml /home/ubuntu
+  296  ls
+  297  mv nodejsApp.yaml nodeapp.yaml
+  298  mv pod-deployment-files/pod-files/nodejsApp.yaml nodeapp.yaml
+  299  sudo mv pod-deployment-files/pod-files/nodejsApp.yaml nodeapp.yaml
+  300  cd pod-deployment-files/pod-files/
+  301  ls
+  302  cd
+  303  ls
+  304  sudo cp nodeapp.yaml pod-deployment-files/pod-files/
+  305  cd pod-deployment-files/pod-files/
+  306  ls
+  307  cd
+  308  vi nodeapp.yaml kubectl apply -f nodeapp.yaml --dry-run=client
+  309  vi nodeapp.yaml kubectl apply -f nodeapp.yaml --dry-run
+  310  vi nodeapp.yaml 
+  311  kuebctl apply -f nodeapp.yaml 
+  312  kubectl apply -f nodeapp.yaml 
+  313  vi nodeapp.yaml 
+  314  kubectl apply -f nodeapp.yaml 
+  315  kubectl get all -n test-ns
+  316  kubectl get pods -o wide -n test-ns
+  317  kubectl get ep -n test-ns
+  318  kubectl get pods -o wide -n test-ns
+  319  kubectl get svc -o wide -n test-ns
+  320  kubectl get svc -o wide -n test-ns --show-labels
+  321  kubectl get pods -o wide -n test-ns --show-labels
+  322  cat nodeapp.yaml 
+  323  cat nodeapp.yaml q
+  324  CLEAR
+  325  clear
+  326  ls
+  327  sudo mv mavenwebapprc.yaml pod-deployment-files/
+  328  ls
+  329  sudo rm nodeapp.yaml 
+  330  ls
+  331  mv history.txt pod-deployment-files/
+  332  sudo mv history.txt pod-deployment-files/
+  333  ls
+  334  kubectl delete rc --all -n test-ns
+  335  kubectl get pods
+  336  kubectl get pods -n test-ns
+  337  kubectl describe pod nodejsrc-6cgld -n test-ns
+  338  kubectl logs nodejsrc-6cgld -n test-ns
+  339  ls
+  340  kubectl get pods --all-namespaces
+  341  vi nodeapprc.yaml
+  342  kubectl apply -f nodeapprc.yaml 
+  343  vi nodeapprc.yaml 
+  344  kubectl apply -f nodeapprc.yaml 
+  345  vi nodeapprc.yaml 
+  346  kubectl apply -f nodeapprc.yaml 
+  347  vi nodeapprc.yaml 
+  348  kubectl apply -f nodeapprc.yaml 
+  349  vi nodeapprc.yaml 
+  350  kubectl apply -f nodeapprc.yaml 
+  351  vi nodeapprc.yaml 
+  352  kubectl apply -f nodeapprc.yaml 
+  353  vi nodeapprc.yaml 
+  354  kubectl apply -f nodeapprc.yaml 
+  355  kubectl get pods -n test-ns
+  356  kubectl get service -n test-ns -o wide
+  357  kubectl get all -n test-ns
+  358  kubectl describe pod -n test-ns
+  359  kubectl get service -n test-ns -o wide
+  360  kubectl get rc -n test-ns
+  361  kubectl get pods -n test-ns -o wide
+  362  kubectl get pods
+  363  kubectl get service -n test-ns
+  364  kubectl get pods -n test-ns
+  365  kubectl get pods -n test-ns -o wide
+  366  kuebctl get pods
+  367  kubectl get servcie -n test-ns
+  368  kubectl get service -n test-ns
+  369  kubectl get pods --all-namespaces
+  370  kubectl get service -n test-ns
+  371  kubectl get pods -n test-ns
+  372  kubectl get pods -n test-ns -o wide
+  373  kubectl get ndoes
+  374  kubectl get nodes
+  375  cat nodeapprc.yaml 
+  376  kubeclt get svc -n test-ns
+  377  cat nodeapprc.yaml 
+  378  kubectl get svc -n test-ns
+  379  kubectl get svc -n test-ns -o wide
+  380  kubectl get pods -n test-ns
+  381  kubectl get rc -n test-ns
+  382  kubectl apply -f nodeapprc.yaml 
+  383  kubectl get rs -n test-ns
+  384  kubectl delete rs nodejsrs -n test-ns
+  385  kubectl get pods
+  386  kubectl get pods -n test-ns
+  387  sudo mv nodeapprc.yaml nodeapprs.yaml
+  388  kubectl apply -f nodeapprs.yaml 
+  389  kubectl get pods -n test-ns -o wide
+  390  kubectl get all -n test-ns -o wide
+  391  kubectl describe mavenwebappsvc -n test-ns
+  392  kubectl describe service mavenwebappsvc -n test-ns
+  393  kubectl describe service nodejsappsvc -n test-ns
+  394  vi nodeapprs.yaml 
+  395  kubectl apply -f nodeapprs.yaml 
+  396  cat nodeapprs.yaml 
+  397  vi nodeapprs.yaml 
+  398  kubectl apply -f nodeapprs.yaml 
+  399  kubectl get all -o wide -n test-ns
+  400  vi nodeapprs.yaml 
+  401  kubectl apply -f nodeapprs.yaml 
+  402  kubectl get all -o wide -n test-ns
+  403  vi nodeapprs.yaml 
+  404  kubectl apply -f nodeapprs.yaml 
+  405  vi nodeapprs.yaml 
+  406  kubectl apply -f nodeapprs.yaml 
+  407  kubectl get all -o wide -n test-ns
+  408  kubeclt delete service masthansvc -n test-ns
+  409  kubectl delete service masthansvc -n test-ns
+  410  vi nodeapprs.yaml 
+  411  kubectl apply -f nodeapprs.yaml 
+  412  kubectl get all -o wide -n test-ns
+  413  cat nodeapprs.yaml 
+  414  vi nodeapprs.yaml 
+  415  kubectl get pods -o wide -n test-ns
+  416  kubectl describe pod nodejsrs-qck8n -n test-ns
+  417  curl -v 50.18.230.45:31958/java-web-app/
+  418  curl -v 50.18.230.45:31958/
+  419  kubectl get pods -o wide -n test-ns
+  420  curl -v 172.31.4.159:31958/
+  421  kubectl get all -n test-ns
+  422  kubectl delete service nodejsappsvc -n test-ns
+  423  kubectl get all -n test-ns
+  424  kubectl apply -f nodeapprs.yaml 
+  425  kubectl get all -n test-ns
+  426  watch kubectl get pods -n test-ns
+  427  clearclear
+  428  clear
+  429  kubectl get nodes
+  430  kubectl get pods
+  431  kubectl get pods -all-namespaces
+  432  kubectl get pods --all-namespaces
+  433  kubectl describe pods -n test-ns nodejsrs-qck8n
+  434  kubectl get pods --all-namespaces
+  435  kubectl get pods --all-namespaces -o wide
+  436  kubectl get services -n test-ns
+  437  kubectl get nodes
+  438  kubectl get pods
+  439  kubectl get ep -n test-ns
+  440  kubectl get pods -o wide -n test-ns
+  441  curl -v 52.53.255.33:32417/
+  442  kubernetes describe pod -n test-ns nodejsrs-qck8n
+  443  kubectl describe pod -n test-ns nodejsrs-qck8n
+  444  kubectl get pods -n test-ns
+  445  kubectl describe pod nodejsrs-525mk -n test-ns 
+  446  kubectl get pods -n test-ns -o wide
+  447  kubectl get api-resources
+  448  kubectl api-resources
+  449  kubectl daemonsets --help 
+  450  kubectl get ds(deamonset) kube-proxy -n kube-system -o yaml (used to check yaml file of any pod)
+  451  kubectl get ds kube-proxy -n kube-system -o yaml
+  452  kubectl get pods --all-namespaces
+  453  kubectl describe pod -n kube-system kube-proxy-v4lc6
+  454  sudo vi deamonset.ysml
+  455  kubectl apply -f deamonset.ysml 
+  456  kubectl apply -f deamonset.ysml ls
+  457  ls
+  458  sudo mv deamonset.ysml deamonset.yaml
+  459  vi deamonset.yaml 
+  460  kubectl apply -f deamonset.yaml 
+  461  cat deamonset.yaml 
+  462  vi deamonset.yaml 
+  463  kubectl apply -f deamonset.yaml 
+  464  vi deamonset.yaml 
+  465  kubectl apply -f deamonset.yaml 
+  466  vi deamonset.yaml 
+  467  kubectl apply -f deamonset.yaml 
+  468  vi deamonset.yaml 
+  469  kubectl apply -f deamonset.yaml 
+  470  vi deamonset.yaml 
+  471  kubectl get pods --all-namespaces
+  472  kubectl get pods --all-namespaces -o wide
+  473  kubectl get pods -n test-ns -o wide
+  474  kubectl get nodes
+  475  cat deamonset.yaml 
+  476  sudo mv deamonset.yaml pod-deployment-files/
+  477  ls
+  478  mv nodeapprs.yaml pod-deployment-files/
+  479  sudo mv nodeapprs.yaml pod-deployment-files/
+  480  vi deployment.yaml
+  481  kubectl get pods -o wide -n test-ns
+  482  kubectl delete pod nginxds-rnqdq -n test-ns
+  483  kubectl get pods -o wide -n test-ns
+  484  kubectl get ds -n test-ns
+  485  kubectl delete ds nginxds -n test-ns
+  486  kubectl get pods -o wide -n test-ns
+  487  kubetl delete pods -n test-ns nodejsrs-525mk nodejsrs-562w9
+  488  kubectl delete pods -n test-ns nodejsrs-525mk nodejsrs-562w9
+  489  kubectl get pods -o wide -n test-ns
+  490  kubectl get rs -n test-ns
+  491  kubectl delete rs nodejsrs -n test-ns
+  492  kubectl get pods -o wide --all-namespaces
+  493  kubectl describe pod -n kube-system weave-net-dkcxg
+  494  kubectl describe service -all-namespaces
+  495  kubectl describe service --all-namespaces
+  496  kubectl get nodes
+  497  kubectl get pods
+  498  kubectl get pods --all-namespaces
+  499  cd pod-deployment-files/
+  500  ls
+  501  sudo cp mavenwebapprc.yaml /ubuntu/home/
+  502  pwd
+  503  sudo cp mavenwebapprc.yaml /home/ubuntu
+  504  ls
+  505  cd
+  506  kubectl apply -f mavenwebapprc.yaml 
+  507  kubeclt get pods -n test-ns
+  508  kubectl get pods -n test-ns
+  509  vi mavenwebapprc.yaml 
+  510  kubectl get pods -n test-ns
+  511  kubectl apply -f mavenwebapprc.yaml 
+  512  kubectl get pods -n test-ns
+  513  kubectl delete pod mavenwebapprc-742j7 -n test-ns
+  514  kubectl delete pod -n test-ns mavenwebapprc-7zvx8
+  515  kubectl delete pod -n test-ns mavenwebapprc-b59xb
+  516  kubectl get pods -n test-ns
+  517  kubectl get pods -n test-ns -o wide
+  518  kubectl get service -n test-ns -o wide
+  519  vi mavenwebapprc.yaml 
+  520  kubectl apply -f mavenwebapprc.yaml 
+  521  kubectl get pods -n test-ns -o wide
+  522  kubectl delete pod -n test-ns mavenwebapprc-bwvvt
+  523  kubectl delete pod -n test-ns mavenwebapprc-srfvq
+  524  kubectl delete pod -n test-ns mavenwebapprc-wqwmk
+  525  kubectl get rs -n test-ns
+  526  kubectl get rs --all-namespaces
+  527  kubectl describe rs -n kube-system coredns-565d847f94
+  528  ls
+  529  sudo mv mavenwebapprc.yaml mavenwebappdeployment.yaml 
+  530  vi deployment.yaml 
+  531  sudo rm deployment.yaml 
+  532  vi mavenwebappdeployment.yaml 
+  533  kubectl get rc -n test-ns
+  534  kubectl delete rc mavenwebapprc -n test-ns
+  535  kubectl apply -f mavenwebappdeployment.yaml 
+  536  vi mavenwebappdeployment.yaml 
+  537  kubectl apply -f mavenwebappdeployment.yaml 
+  538  vi mavenwebappdeployment.yaml
+  539  kubectl get deployments -n test-ns
+  540  kubectl apply -f mavenwebappdeployment.yaml
+  541  vi mavenwebappdeployment.yaml 
+  542  kubectl apply -f mavenwebappdeployment.yaml
+  543  kubectl get pods -n test-ns
+  544  kubectl get pods -n test-ns -o wide
+  545  kubectl get service -n test-ns
+  546  kubectl get all -n test-ns
+  547  kubectl rollout status deployment mavenwebapp
+  548  kubectl rollout status deployment mavenwebapp -n test-ns
+  549  kubectl roullout history deployment mavenwebapp -n test-ns
+  550  kubectl rollout history deployment mavenwebapp -n test-ns
+  551  kubectl rollout history deployment mavenwebapp -n test-ns 1
+  552  watch kubectl get pods -n test-ns
+  553  kubectl set image deployment mavenwebapp mavenwebappcontainer=shahrukh338/java-web-app:31 -n test-ns --record=true
+  554  vi mavenwebappdeployment.yaml 
+  555  kubectl apply -f mavenwebappdeployment.yaml 
+  556  kuebctl get pods
+  557  kubectl get pods -n test-ns
+  558  kubectl get rs -n test-ns
+  559  kubectl set image deployment mavenwebapp mavenwebappcontainer=shahrukh338/java-web-app:1 -n test-ns --record=true
+  560  kubectl rollout history deployment mavenwebapp -n test-ns
+  561  kubectl rollout undo deployment mavenwebapp -n test-ns --record=true
+  562  kubectl rollout undo deployment mavenwebapp -n test-ns
+  563  kubectl rollout history deployment mavenwebapp -n test-ns
+  564  vi mavenwebappdeployment.yaml 
+  565  kubectl get deployment -n test-ns
+  566  kubectl delete deployment mavenwebapp -n test-ns
+  567  kubectl apply -f mavenwebappdeployment.yaml 
+  568  vi mavenwebappdeployment.yaml 
+  569  kubectl apply -f mavenwebappdeployment.yaml 
+  570  vi mavenwebappdeployment.yaml 
+  571  kubectl apply -f mavenwebappdeployment.yaml 
+  572  kubectl get pods
+  573  kubectl get all -n test-ns
+  574  vi mavenwebappdeployment.yaml 
+  575  kubectl get all -n test-ns
+  576  kubectl apply -f mavenwebappdeployment.yaml 
+  577  kubectl get all -n test-ns
+  578  kubectl get pods -n test-ns -o wide
+  579  kubectl logs --previous -n test-ns
+  580  kubectl logs --previous
+  581  kubectl get logs -a -n test-ns
+  582  kubectl get pods -a    
+  583  kubectl get pods --help
+  584  kubectl apply -f mavenwebappdeployment.yaml --record-true
+  585  kubectl apply -f mavenwebappdeployment.yaml --record=true
+  586  kubectl rollout history deployment mavenwebapp -n test-ns
+  587  kubectl rollout history deployment mavenwebapp -n test-ns --revision 2
+  588  history > historydm.txt
+  589  vi historydm.txt 
+  590  vi historydm1.txt 
+  591  history > historydm1.txt
+  592  vi historydm1.txt 
+  593  history
+  594  vi historydm1.txt 
+  595  vi historydm2.txt 
+  596  ls
+  597  sudo rm historydm.txt historydm1.txt 
+  598  ls
+  599  cat mavenwebappdeployment.yaml 
+  600  vi mavenwebappdeployment.yaml 
+  601  kubectl get pods -o wide --all-namespaces
+  602  kubectl describe pod -n test ns mavenwebapp-788f9cc8f6-4kk9s
+  603  kubectl describe pod -n test-ns mavenwebapp-788f9cc8f6-4kk9s
+  604  cat mavenwebappdeployment.yaml 
+  605  kubectl get services -n test-ns
+  606  kubectl describe service mavenwebappsvc -n test-ns
+  607  kubectl get services -n test-ns
+  608  kubectl describe service mavenwebappsvc -n test-ns
+  609  kubectl get labels -n test-ns
+  610  kubectl get --labels -n test-ns
+  611  kubectl get nodes --show-labels
+  612  kubectl get pod --show-labels
+  613  kubectl get pod --show-labels -n test-ns
+  614  ls
+  615  vi mavenwebappdeployment.yaml 
+  616  mavenwebappdeployment2.yaml
+  617  vi mavenwebappdeployment2.yaml
+  618  kubectl apply -f mavenwebappdeployment2.yaml 
+  619  kubectl get pods -o wide --all-namespaces
+  620  kubectl describe pod -n kube-system kube-proxy-29hc2
+  621  kubectl get pods --all-namespaces
+  622  kubectl get all --all-namespaces
+  623  kubectl describr service kubernetes
+  624  kubectl describe service kubernetes
+  625  kubectl describe pod etcd-ip-172-31-18-109 -n kube-system
+  626  kubectl get service --all-namespaces
+  627  kubectl describe service kubernetes
+  628  kubectl get ep --all-namespaces
+  629  kubectl describe ep kubernetes 
+  630  exit
+  631  watch kubectl top
+  632  watch kubectl top pods
+  633  kubectl get hpa
+  634  kubectl get deployment 
+  635  kubectl get deployment  -o wide
+  636  kubectl get service  -o wide
+  637  curl 10.100.211.89
+  638  kubectl run load-generator -i --tty --rm --image=busybox /bin/sh
+  639  clear
+  640  kubectl get nodes 
+  641  kubectl get pods -n test-ns
+  642  kubectl get services
+  643  kubectl get pods -n test-ns -o wide
+  644  kubectl get services -o wide
+  645  kubectl describe pod -n test-ns mavenwebapp-788f9cc8f6-bpnm5
+  646  kubectl describe service testsvc
+  647  kuubectl get all -n test-ns
+  648  kubectl get all -n test-ns
+  649  kubectl get service --all-namespaces
+  650  kubectl get ds kube-proxy -n kube-system -o yaml 
+  651  kubectl get all -n test-ns
+  652  ls
+  653  cat mavenwebappdeployment2
+  654  cat mavenwebappdeployment2.yaml 
+  655  ls
+  656  kubectl get deployment -n test-ns
+  657  kubectl get deployment -n test-ns -o wide
+  658  kubectl --show-labels -n test-ns
+  659  kubectl get service ls
+  660  kubectl get service -n test-ns
+  661  kubectl get pods --show-labels
+  662  kubectl get pods --show-labels -n test-ns
+  663  kubectl get service -n test-ns
+  664  kubectl describe service mavenwebappsvc
+  665  kubectl describe service mavenwebappsvc -n test-ns
+  666  kubectl get deployment -n test-ns
+  667  kubectl delete deployment -n test-ns mavenwebapp
+  668  kubectl get pods --all-namespaces
+  669  kubectl top
+  670  kubectl get pods
+  671  kubectl get pods -n test-ns
+  672  vi metricserver.yaml
+  673  kubectl apply -f metricserver.yaml 
+  674  kubectltop
+  675  kubectl top
+  676  kubectl get pods --all-namespaces
+  677  kubectl describe pod metrics-server-8ff8f88c6-rpnx6 -n kube-system
+  678  kubectl get pods -o wide
+  679  kubectl get pods -o wide -n test-ns
+  680  kubectl get pods -o wide --all-namespaces
+  681  vi metricserver.yaml 
+  682  kubectl apply -f metricserver.yaml 
+  683  kubectl get all --all-namespaces
+  684  kubectl top
+  685  kubectl top nodes
+  686  kubectl top pods -a
+  687  kubectl top pod -a
+  688  kubectl top pods -A
+  689  kubectl top pods
+  690  kubectl top pods -n test-ns
+  691  kubectl top pods -A
+  692  kubectl apply -f mavenwebappdeployment.yaml
+  693  kubectl get pods -n test-ns
+  694  kubectl get service -n test-ns
+  695  kubectl get all -n test-ns
+  696  kubectl get all -n test-ns -o wide
+  697  vi hpadeployment.yaml
+  698  kubectl apply -f hpadeployment.yaml 
+  699  vi hpadeployment.yaml 
+  700  cat hpadeployment.yaml 
+  701  kubectl get all --all-namespaces
+  702  kubectl get all -o wide
+  703  kubectl get pod 
+  704  vi hpadeployment.yaml 
+  705  kubectl get all 
+  706  vi hpadeployment.yaml 
+  707  kubectl apply -f hpadeployment.yaml 
+  708  kubectl get all
+  709  curl 10.111.254.168
+  710  curl -v 10.111.254.168
+  711  vi hpadeployment.yaml 
+  712  kubectl apply -f hpadeployment.yaml 
+  713  curl -v 10.111.254.168
+  714  curl -v 10.111.254.168:30652
+  715  curl 10.111.254.168:30652
+  716  curl 10.111.254.168
+  717  vi hpadeployment.yaml 
+  718  curl 10.111.254.168:30652
+  719  kubectl apply -f hpadeployment.yaml 
+  720  curl 10.111.254.168:30652
+  721  kubectl get pods
+  722  cat hpadeployment.yaml 
+  723  kubectl get pods -o wide --all-namespaces
+  724  kubectl get deployment --all-namespaces
+  725  kuebctl delete deployment mavenwebapp -n test-ns
+  726  kubectl delete deployment mavenwebapp -n test-ns
+  727  curl 10.111.254.168
+  728  kubectl get pods -o wide
+  729  kubectl get all -o wide
+  730  curl 10.111.254.168
+  731  kubectl get service 
+  732  curl 10.111.254.168:30652
+  733  kubectl describe pod hpadeployment-86bc98587-52r99
+  734  vi hpadeployment.yaml 
+  735  kubectl apply -f hpadeployment.yaml 
+  736  kubectl get all 
+  737  curl 10.107.108.142
+  738  vi hpadeployment.yaml 
+  739  kubectl apply -f hpadeployment.yaml 
+  740  curl 10.107.108.142
+  741  vi hpadeployment.yaml 
+  742  kubectl apply -f hpadeployment.yaml 
+  743  vi hpadeployment.yaml 
+  744  kubectl apply -f hpadeployment.yaml 
+  745  vi hpadeployment.yaml 
+  746  kubectl get service
+  747  kubectl delete service hpasvc
+  748  kubectl delete service hpaclusterservice
+  749  kubectl apply -f hpadeployment.yaml 
+  750  vi hpadeployment.yaml 
+  751  kubectl apply -f hpadeployment.yaml 
+  752  vi hpadeployment.yaml 
+  753  kubectl apply -f hpadeployment.yaml 
+  754  kubectl get pods
+  755  kubectl get deployments
+  756  kubectl delete deployment hpadeployment
+  757  kubectl kubectl get pods
+  758  kubectl apply -f hpadeployment.yaml 
+  759  kubectl get all
+  760  curl 10.100.211.89
+  761  cat hpadeployment.yaml 
+  762  kubectl run loadgenerator -i --tty --rm --image=busybox /bin/bash
+  763  kubectl run loadgenerator -i --tty --rm --image=busybox /bin/sh
+  764  kubectl get pods
+  765  kubectl delete pod loadgenerator
+  766  kubectl run load-generator -i --tty --rm --image=busybox /bin/sh
+  767  vi hac.yaml
+  768  sudo mv hac.yaml hpascaling.yaml
+  769  sudo vi hpascaling.yaml
+  770  vi hpascaling.yaml 
+  771  cat hpascaling.yaml 
+  772  kubectl apply -f hpascaling.yaml 
+  773  vi hpascaling.yaml 
+  774  kubectl apply -f hpascaling.yaml 
+  775  vi hpascaling.yaml 
+  776  kubectl apply -f hpascaling.yaml 
+  777  vi hpascaling.yaml 
+  778  kubectl apply -f hpascaling.yaml 
+  779  vi hpascaling.yaml 
+  780  kubectl get pods
+  781  kubeclt get all
+  782  kubectl get all
+  783  kubectl get all -o wide
+  784  kubectl get service
+  785  kubectl get hpa 
+  786  watch top pods
+  787  kubectl top pods
+  788  kubectl get hpa
+  789  kubectl get pods -o wide
+  790  kubectl get pods -o wide --all-namespaces
+  791  kubectl get pod metrics-server-55dd79d7bf-wjgfp -n kube-system -o yaml
+  792  wget k8s.gcr.io/metrics-server/metrics-server:v0.6.2
+  793  kubectl get pod metrics-server-55dd79d7bf-wjgfp -n kube-system -o yaml
+  794  kubectl get --help
+  795  kubectl get nodes
+  796  kubectl descibe ip-172-31-4-159
+  797  kubectl describe ip-172-31-4-159
+  798  kubectl describe node ip-172-31-4-159
+  799  vi mongo.yaml 
+  800  kubectl apply -f mongo.yaml 
+  801  kubectl get pods -o wide -n test-ns
+  802  kubectl get service -n test-ns
+  803  kubectl get pods -o wide 
+  804  vi mongo.yaml 
+  805  kubectl get rs --all-namespaces
+  806  kubectl delete rs mongodb
+  807  kubectl delete rs mongodb -n test-ns
+  808  kubectl apply -f mongo.yaml 
+  809  vi mongo.yaml 
+  810  kubectl apply -f mongo.yaml 
+  811  kubectl get pods -n test-ns
+  812  kubectl describe pods -n test-ns mongodb-pbckp
+  813  ls -lk
+  814  ls -kl
+  815  df -kf
+  816  df -k
+  817  df -kr
+  818  history > history-volumes.txt

@@ -1,0 +1,83 @@
+  505  kubectl apply -f mavenwebapprc.yaml
+  506  kubeclt get pods -n test-ns
+  507  kubectl get pods -n test-ns
+  508  vi mavenwebapprc.yaml
+  509  kubectl get pods -n test-ns
+  510  kubectl apply -f mavenwebapprc.yaml
+  511  kubectl get pods -n test-ns
+  512  kubectl delete pod mavenwebapprc-742j7 -n test-ns
+  513  kubectl delete pod -n test-ns mavenwebapprc-7zvx8
+  514  kubectl delete pod -n test-ns mavenwebapprc-b59xb
+  515  kubectl get pods -n test-ns
+  516  kubectl get pods -n test-ns -o wide
+  517  kubectl get service -n test-ns -o wide
+  518  vi mavenwebapprc.yaml
+  519  kubectl apply -f mavenwebapprc.yaml
+  520  kubectl get pods -n test-ns -o wide
+  521  kubectl delete pod -n test-ns mavenwebapprc-bwvvt
+  522  kubectl delete pod -n test-ns mavenwebapprc-srfvq
+  523  kubectl delete pod -n test-ns mavenwebapprc-wqwmk
+  524  kubectl get rs -n test-ns
+  525  kubectl get rs --all-namespaces
+  526  kubectl describe rs -n kube-system coredns-565d847f94
+  527  ls
+  528  sudo mv mavenwebapprc.yaml mavenwebappdeployment.yaml
+  529  vi deployment.yaml
+  530  sudo rm deployment.yaml
+  531  vi mavenwebappdeployment.yaml
+  532  kubectl get rc -n test-ns
+  533  kubectl delete rc mavenwebapprc -n test-ns
+  534  kubectl apply -f mavenwebappdeployment.yaml
+  535  vi mavenwebappdeployment.yaml
+  536  kubectl apply -f mavenwebappdeployment.yaml
+  537  vi mavenwebappdeployment.yaml
+  538  kubectl get deployments -n test-ns
+  539  kubectl apply -f mavenwebappdeployment.yaml
+  540  vi mavenwebappdeployment.yaml
+  541  kubectl apply -f mavenwebappdeployment.yaml
+  542  kubectl get pods -n test-ns
+  543  kubectl get pods -n test-ns -o wide
+  544  kubectl get service -n test-ns
+  545  kubectl get all -n test-ns
+  546  kubectl rollout status deployment mavenwebapp
+  547  kubectl rollout status deployment mavenwebapp -n test-ns
+  548  kubectl roullout history deployment mavenwebapp -n test-ns
+  549  kubectl rollout history deployment mavenwebapp -n test-ns
+  550  kubectl rollout history deployment mavenwebapp -n test-ns 1
+  551  watch kubectl get pods -n test-ns
+  552  kubectl set image deployment mavenwebapp mavenwebappcontainer=shahrukh338/java-web-app:31 -n test-ns --record=true
+  553  vi mavenwebappdeployment.yaml
+  554  kubectl apply -f mavenwebappdeployment.yaml
+  555  kuebctl get pods
+  556  kubectl get pods -n test-ns
+  557  kubectl get rs -n test-ns
+  558  kubectl set image deployment mavenwebapp mavenwebappcontainer=shahrukh338/java-web-app:1 -n test-ns --record=true
+  559  kubectl rollout history deployment mavenwebapp -n test-ns
+  560  kubectl rollout undo deployment mavenwebapp -n test-ns --record=true
+  561  kubectl rollout undo deployment mavenwebapp -n test-ns
+  562  kubectl rollout history deployment mavenwebapp -n test-ns
+  563  vi mavenwebappdeployment.yaml
+  564  kubectl get deployment -n test-ns
+  565  kubectl delete deployment mavenwebapp -n test-ns
+  566  kubectl apply -f mavenwebappdeployment.yaml
+  567  vi mavenwebappdeployment.yaml
+  568  kubectl apply -f mavenwebappdeployment.yaml
+  569  vi mavenwebappdeployment.yaml
+  570  kubectl apply -f mavenwebappdeployment.yaml
+  571  kubectl get pods
+  572  kubectl get all -n test-ns
+  573  vi mavenwebappdeployment.yaml
+  574  kubectl get all -n test-ns
+  575  kubectl apply -f mavenwebappdeployment.yaml
+  576  kubectl get all -n test-ns
+  577  kubectl get pods -n test-ns -o wide
+  578  kubectl logs --previous -n test-ns
+  579  kubectl logs --previous
+  580  kubectl get logs -a -n test-ns
+  581  kubectl get pods -a
+  582  kubectl get pods --help
+  583  kubectl apply -f mavenwebappdeployment.yaml --record-true
+  584  kubectl apply -f mavenwebappdeployment.yaml --record=true
+  585  kubectl rollout history deployment mavenwebapp -n test-ns
+  586  kubectl rollout history deployment mavenwebapp -n test-ns --revision 2
+

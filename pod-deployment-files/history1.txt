@@ -1,0 +1,180 @@
+    1  sudo su -
+    2  mkdir -p $HOME/.kube
+    3  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+    4  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+    5  kubectl get pods -o wide -n kube-system
+    6  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+    7  kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+    8  kubectl get nodes
+    9  kubectl get pods --all-namespaces
+   10  kubeadm token create --print-join-command
+   11  kubectl get nodes
+   12  kubectl get pods --all-namespaces
+   13  kubectl get nodes
+   14  kubectl get pods --all-namespaces
+   15  kubectl get pods
+   16  kubectl get ns
+   17  kubectl get pods -n kube-system
+   18  kubectl get pods --all-namespaces
+   19  vi mavenwebapp.yaml
+   20  kubectl apply -f mavenwebapp.yaml --dry-run=client
+   21  kubectl apply -f mavenwebapp.yaml
+   22  kubectl create namespace test-ns
+   23  kubectl apply -f mavenwebapp.yaml
+   24  cat mavenwebapp.yaml 
+   25  vi mavenwebapp.yaml 
+   26  kubectl apply -f mavenwebapp.yaml
+   27  kubectl get pods -n test-ns
+   28  vi mavenwebapp.yaml 
+   29  kubectl apply -f mavenwebapp.yaml
+   30  kubectl get pods -n test-ns
+   31  history > history.txt
+   32  vi history.txt 
+   33  kubectl get pods -o wide 
+   34  kubectl get pods --all-namespaces-o wide 
+   35  kubectl get pods --all-namespaces -o wide 
+   36  kubectl describe mavenwebapppod -n test-ns
+   37  kubectl describe pod mavenwebapppod -n test-ns
+   38  kubectl delete pod mavenwebapppod -n test-ns
+   39  kubectl get pods --all-namespaces -o wide 
+   40  kubectl get pods --all-namespaces -o wide -a
+   41  kubectl apply -f mavenwebapp.yaml 
+   42  kubectl get pods --all-namespaces
+   43  kubectl describe pod mavenwebapppod -n test-ns
+   44  clear
+   45  kubectl nodes
+   46  kubectl get nodes
+   47  kubectl describe node ip-172-31-18-109
+   48  kubectl all
+   49  kubectl -all
+   50  kubectl --all
+   51  kubectl get -all
+   52  kubectl get -all -n test-ns
+   53  kubectl get all -n test-ns
+   54  kubectl get all -n test-ns -o wide
+   55  kubectl get pods
+   56  kubeadm token create --print-join-command
+   57  kubectl get pods
+   58  kubectl getnodes
+   59  kubectl get nodes
+   60  sudo su
+   61  kubectl get pods
+   62  kubectl get pods -n test-ns
+   63  kubectl get nodes
+   64  ls
+   65  vi mavenwebapp.yaml 
+   66  kubectl apply -f mavenwebapp.yaml 
+   67  vi mavenwebapp.yaml 
+   68  kubectl apply -f mavenwebapp.yaml 
+   69  vi mavenwebapp.yaml 
+   70  kubectl apply -f mavenwebapp.yaml 
+   71  kubectl describe service mavenwebapp -n test-ns
+   72  vi mavenwebapp.yaml 
+   73  curl -v 10.100.186.24/maven-web-application/
+   74  kubectl get pod -n test-ns -o wide
+   75  kubectl get pod -o wide
+   76  kubectl get pods -o wide
+   77  kubectl get nodes -o wide
+   78  kubectl get pods -n test-ns
+   79  kubectl get pods -n test-ns -o wide
+   80  kubectl get pods
+   81  kubectl get pods -n test-ns
+   82  kubectl get pods -n test-ns -o wide
+   83  curl -v 10.44.0.1:8080/maven-web-application/
+   84  vi nodejs.yaml
+   85  mv nodejs.yaml nodejsApp.yaml
+   86  kubectl apply -f nodejsApp.yaml 
+   87  kubectl get all -n test-ns
+   88  kubectl exec -it nodejspod -n test-ns 
+   89  kubectl exec -it nodejspod -n test-ns  -- sh
+   90  kubectl get nodes
+   91  kubectl get pods -n test-ns -o wide
+   92  ls
+   93  cat nodejsApp.yaml 
+   94  vi mavenwebapp.yaml 
+   95  kubectl apply -f mavenwebapp.yaml 
+   96  kubectl get all -n test-ns
+   97  vi nodejsApp.yaml 
+   98  kubectl apply -f nodejsApp.yaml 
+   99  kubectl get all -n test-ns
+  100  kubectl exec -it mavenwebapppod -n test-ns -- bash
+  101  kubectl get all -n test-ns
+  102  vi nodejsApp.yaml 
+  103  kubectl exec -it mavenwebapppod -n test-ns -- bash
+  104  kubectl apply -f nodejsApp.yaml 
+  105  kubectl exec -it mavenwebapppod -n test-ns -- bash
+  106  sudo apt install net-tools
+  107  sudo netstat -tunlp
+  108  kubectl get pods --all-namespaces
+  109  vi multicontainerpod.yaml
+  110  kubectl apply -f multicontainerpod.yaml
+  111  vi multicontainerpod.yaml
+  112  kubectl apply -f multicontainerpod.yaml
+  113  cat multicontainerpod.yaml 
+  114  kubectl apply -f multicontainerpod.yaml
+  115  kubectl exec -it testpod -- bash
+  116  kubectl get nodes
+  117  kubectl get all 
+  118  ls
+  119  vi multicontainerpod.yaml 
+  120  kubectl apply -f multicontainerpod.yaml 
+  121  kubectl get all
+  122  cat multicontainerpod.yaml 
+  123  kubectl get all
+  124  kubectl exec -it nodejsapp -n test-ns
+  125  kubectl exec -it nodejsapp -n test-ns --bash
+  126  kubectl exec -it nodejsapp -n test-ns -- bash
+  127  kubectl get pods -n test-ns
+  128  kubectl exec -it nodejspod -n test-ns -- bash
+  129  kubectl get all -A
+  130  kubectl get pods -n test-ns
+  131  kubectl get nodes
+  132  kubectl get pods
+  133  kubectl get pods -n test-ns
+  134  kubectl get all -n test-ns
+  135  kubectl get all -n kube-system
+  136  vi name.yaml
+  137  mv name.yaml nginxpod.yaml
+  138  ls
+  139  sudo cp nginxpod.yaml /etc/kubernetes/manifests/
+  140  kubectl get pods
+  141  sudo cp nginxpod.yaml /etc/kubernetes/manifests/nginxpod.yaml
+  142  kubectl get pods
+  143  kubectl get pods -a
+  144  kubectl get pods -all
+  145  kubectl get pods
+  146  kubectl get pods -o wide
+  147  kubectl delete pod javawebapp
+  148  kubectl get pods
+  149  ls
+  150  cd /etc/kubernetes/manifests/
+  151  ls
+  152  vi nginxpod.yaml 
+  153  kubectl get pods
+  154  ls
+  155  cd
+  156  ls
+  157  kubectl get pods
+  158  sudo rm /etc/kubernetes/manifests/nginxpod.yaml 
+  159  kubectl api-resources | grep "ReplicationController"
+  160  kubectl get rc --all-namespaces
+  161  kubectl get pods --all-namespaces
+  162  kubectl get pods
+  163  kubectl get pods --all-namespaces
+  164  ls
+  165  sudo mkdir pod-deployment-files
+  166  ls
+  167  cd pod-deployment-files/
+  168  sudo mkdir pod-files
+  169  sudo mkdir deployment-files
+  170  cd
+  171  ls
+  172  mv . pod-deployment-files/pod-files/
+  173  sudo mv . pod-deployment-files/pod-files/
+  174  sudo cp . pod-deployment-files/pod-files/
+  175  sudo mv mavenwebapp.yaml multicontainerpod.yaml nginxpod.yaml nodejsApp.yaml pod-deployment-files/pod-files/
+  176  ls
+  177  cd pod-deployment-files/pod-files/
+  178  ls
+  179  cd
+  180  history > history1.txt
